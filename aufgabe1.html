@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>JavaScript Aufgabe U1 - Aufgabe 1</title>
+    <title>JavaScript Aufgabe U1 - Aufgabe 1 - String Umkehren</title>
+
+
 </head>
 <body>
+    <h1>String umkehren</h1>
+    <label>String eingeben:</label>
+    <input type="text" name="myString" id="myString">
+    <button name="umkehren" value="Umkehren" onclick="reverseString();">Umkehren</button>
+    <button name="reset" value="reset" onclick="document.getElementById('umgekehrt').innerHTML='';">Reset</button>
 
+    <p id="umgekehrt"></p>
+
+    <p><a href="index.html">Zurück zum Index</a></p>
+
+    <script>
+        function reverseString() {
+            var inputString, outputString;
+            inputString = document.getElementById("myString").value;
+            outputString = inputString.split("").reverse().join("");
+
+            document.getElementById("umgekehrt").innerHTML = "Umgekehrter String: " + outputString;
+        }
+    </script>
 </body>
 </html>
