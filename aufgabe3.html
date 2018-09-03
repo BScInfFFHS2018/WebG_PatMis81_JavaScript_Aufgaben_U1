@@ -3,38 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>JavaScript Aufgabe U1 - Aufgabe 3 - Pangramm-Check</title>
+    <script src="js/pangramm.js"></script>
 </head>
 <body>
     <h1>Pangramm-Check</h1>
     <label>Satz eingeben</label>
-    <input type="text" id="inputText" name="Satz" oninput="checkPangram();">
+    <input type="text" id="inputText" name="Satz" oninput="document.getElementById('pangramm').innerHTML = checkPangram(document.getElementById('inputText').value);">
 
     <p id="pangramm"></p>
 
     <p><a href="index.html">Zurück zum Index</a></p>
-
-    <script>
-        function checkPangram() {
-            var inputText, inputTextLC, pangramRe, isPangram;
-            isPangram = "Kein Pangramm.";
-            inputText = document.getElementById("inputText").value;
-            inputTextLC = inputText.toLowerCase();
-            pangramRe = /([a-z])(?!.*\1)/g;
-            if(inputTextLC.match(pangramRe)) {
-                if (inputTextLC.match(pangramRe).length == 26) {
-                    isPangram = "Voila! Ein Pangramm!";
-                    document.getElementById("pangramm").style.color = "red";
-                } else {
-                    document.getElementById("pangramm").style.color = "";
-                }
-            }
-
-            document.getElementById("pangramm").innerHTML = isPangram;
-
-
-        }
-    </script>
-
-
 </body>
 </html>

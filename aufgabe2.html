@@ -3,29 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>JavaScript Aufgabe U1 - Aufgabe 2 - Schaltjahr</title>
+    <script src="js/schaltjahr.js"></script>
 </head>
 <body>
     <h1>Schaltjahr-Check</h1>
     <label>Jahrzahl eingeben:</label>
     <input type="text" id="eingabeJahr" name="eingabeJahr">
-    <button onclick="checkLeapYear();">Überprüfe Schaltjahr ja/nein</button>
+    <button onclick="document.getElementById('schaltjahr').innerHTML = 'Schaltjahr: ' + checkLeapYear(document.getElementById('eingabeJahr').value);">Überprüfe Schaltjahr ja/nein</button>
     <button onclick="document.getElementById('schaltjahr').innerHTML = '';">Reset</button>
     <p id="schaltjahr"></p>
 
     <p><a href="index.html">Zurück zum Index</a></p>
-
-    <script>
-        function checkLeapYear() {
-            var inputYear, leapYear;
-            leapYear = false;
-            inputYear = document.getElementById("eingabeJahr").value;
-            if(((inputYear % 4) === 0) && ((inputYear % 100) !== 0) || ((inputYear % 400) === 0)) {
-                leapYear = "ja";
-            } else {
-                leapYear = "nein";
-            }
-            document.getElementById("schaltjahr").innerHTML = "Schaltjahr: " + leapYear;
-        }
-    </script>
 </body>
 </html>
