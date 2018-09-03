@@ -9,7 +9,6 @@ function checkPangram(inputText) {
      */
     abc.forEach(function(letter) {
         let letterIndex = inputTextLC.indexOf(letter);
-        console.log("Letter '" + letter + "' index: " + letterIndex);
         if(letterIndex != -1) {
             letterCount++;
         }
